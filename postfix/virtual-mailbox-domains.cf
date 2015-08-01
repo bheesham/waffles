@@ -1,0 +1,5 @@
+user = root
+password = 
+hosts = localhost
+dbname = mail
+query = SELECT 1 FROM domains WHERE domain='%s' AND relay=0

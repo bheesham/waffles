@@ -1,0 +1,17 @@
+passdb {
+  driver = sql
+  args = /etc/dovecot/dovecot-sql.conf.ext
+}
+
+# The order in which these are defined are important.
+# See: http://wiki2.dovecot.org/UserDatabase/Prefetch
+
+userdb {
+  driver = static
+  args = uid=vmail gid=vmail
+}
+
+userdb {
+  driver = sql
+  args = /etc/dovecot/dovecot-sql.conf.ext
+}

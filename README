@@ -1,0 +1,41 @@
+# Waffles
+
+Dovecot, Postfix, MariaDB on Fedora installation instructions and configuration.
+
+A work in progress. I'll have to go through all of the configuration files once
+I have things working without TLS.
+
+Postfix is the last part of the puzzle that I need to get working. I think?
+
+## Installation
+```bash
+sudo dnf install dovecot exim mariadb-server dovecot-mysql exim-mysql
+```
+
+## MariaDB
+```bash
+sudo service mariadb start
+sudo mysql_secure_installation
+cat mariadb/db.sql | mysql -u root
+```
+
+## Dovecot
+```bash
+sudo cp -R dovecot/* /etc/dovecot
+sudo service dovecot start
+```
+
+## Postfix
+```
+sudo cp postfix/* /etc/postfix
+sudo postfix reload
+```
+
+## Other stuff
+
+Make sure that there's a `vmail` user and group, and also that
+`/var/log/mail` is owned by `vmail`.
+```
+sudo useradd vmail -d /var/spool/mail -s /sbin/nologin
+sudo chown -R vmail:vmail /var/spool/mail
+```

@@ -1,0 +1,8 @@
+default_pass_scheme = SHA512-CRYPT
+
+driver = mysql
+connect = host=localhost dbname=mail user=root
+
+password_query = SELECT email AS user, password\
+  FROM users\
+  WHERE email = '%u'
