@@ -1,0 +1,5 @@
+user = root
+password =
+hosts = 127.0.0.1
+dbname = mail
+query = SELECT dest FROM aliases WHERE source = '%s'

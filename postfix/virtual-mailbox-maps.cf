@@ -1,5 +1,0 @@
-user = root
-password = 
-hosts = localhost
-dbname = mail
-query = SELECT email FROM aliases WHERE alias='%s'

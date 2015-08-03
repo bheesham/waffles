@@ -2,14 +2,13 @@
 
 Dovecot, Postfix, MariaDB on Fedora installation instructions and configuration.
 
-A work in progress. I'll have to go through all of the configuration files once
-I have things working without TLS.
+## TODO
 
-Postfix is the last part of the puzzle that I need to get working. I think?
+ [ ] Configure TLS.
 
 ## Installation
 ```bash
-sudo dnf install dovecot exim mariadb-server dovecot-mysql exim-mysql
+sudo dnf install dovecot dovecot-mysql mariadb-devel mariadb-server postfix
 ```
 
 ## MariaDB
